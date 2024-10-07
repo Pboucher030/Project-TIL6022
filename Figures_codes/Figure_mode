@@ -1,0 +1,37 @@
+import matplotlib.pyplot as plt
+
+df_mat = df_mat[df_mat['Leeftijd']=='Totaal']
+df_mat = df_mat[df_mat['Reismotieven']=='Totaal']
+df_mat = df_mat[df_mat['Vervoerwijzen']!='Totaal']
+
+fig = plt.figure(figsize=(12, 9))
+gs = fig.add_gridspec(nrows=2)
+colors = ['blue','orange','green','red','purple','brown','black']
+
+
+x = df_mat['Perioden'].drop_duplicates()
+y = df_mat['Vervoerwijzen'].drop_duplicates()
+labels = ['Car(driver)','Car(passenger)','Train','Bus/Tram/Metro','Bike','Walk','Other Modes']
+ax = fig.add_subplot(gs[0])
+j=0
+for i in y:
+    ax.plot(x,df_mat[df_mat['Vervoerwijzen']==i]['Ritten per persoon per dag (gemiddeld) (aantal)'],color = colors[j],marker = '.')
+    j+=1
+ax.set_xlabel('Year')
+ax.set_ylabel('Trips per person per day (on Average)')
+ax.set_xticks(ax.get_xticks()[::3])
+ax.set_title('Trend of Trips per Day of Different Modes')
+ax.legend(labels,loc='upper right',bbox_to_anchor=(1.23, 1))
+
+ax = fig.add_subplot(gs[1])
+j=0
+for i in y:
+    ax.plot(x,df_mat[df_mat['Vervoerwijzen']==i]['Afgelegde afstand per rit (gemiddeld) (km)'],color = colors[j],marker = '.')
+    j+=1
+ax.set_xlabel('Year')
+ax.set_ylabel('Distance Travelled per Trip (on Average) (km)')
+ax.set_xticks(ax.get_xticks()[::3])
+ax.set_title('Trend of Distance Travelled per Trip of Different Modes')
+ax.legend(labels,loc='upper right',bbox_to_anchor=(1.23, 1))
+
+plt.show()

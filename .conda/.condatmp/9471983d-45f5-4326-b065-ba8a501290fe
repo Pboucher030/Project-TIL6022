@@ -1,0 +1,13 @@
+prefix=c:/Users/teun/OneDrive/Documenten/Transport_Infrastructure_Logistics/Python/Tilprogramming/Project-TIL6022/.conda/Library
+exec_prefix=c:/Users/teun/OneDrive/Documenten/Transport_Infrastructure_Logistics/Python/Tilprogramming/Project-TIL6022/.conda/Library
+libdir=c:/Users/teun/OneDrive/Documenten/Transport_Infrastructure_Logistics/Python/Tilprogramming/Project-TIL6022/.conda/Library/lib
+sharedlibdir=c:/Users/teun/OneDrive/Documenten/Transport_Infrastructure_Logistics/Python/Tilprogramming/Project-TIL6022/.conda/Library/lib
+includedir=c:/Users/teun/OneDrive/Documenten/Transport_Infrastructure_Logistics/Python/Tilprogramming/Project-TIL6022/.conda/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

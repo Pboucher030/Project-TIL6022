@@ -1,0 +1,12 @@
+\ Model StainlessSteelProduction_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ inv_balance[3]: - y[3,6] + y[3,7] - z[3,7] = -150
+ inv_balance[3]: - y[3,6] + y[3,7] - z[3,7] = 0
+Bounds
+ y[3,6] free
+ y[3,7] free
+ z[3,7] free
+End
